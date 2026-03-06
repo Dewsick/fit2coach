@@ -342,7 +342,7 @@
         }
 
         .hero::before {
-		    background-attachment: fixed;
+            background-attachment: fixed;
             content: '';
             position: absolute;
             top: -150px;
@@ -1486,6 +1486,345 @@
         }
 
         /* ============================================
+       CONTACTS SECTION
+       ============================================ */
+        .contacts {
+            padding: 100px 40px 40px;
+            background: #1F2937;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contacts::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contacts::after {
+            content: '';
+            position: absolute;
+            bottom: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contacts__inner {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto 100px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .contacts__bottom {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #6B7280;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .contacts__link-muted {
+            color: #6B7280;
+            text-decoration: none;
+            transition: color var(--duration-fast);
+        }
+
+        .contacts__link-muted:hover {
+            color: #FFFFFF;
+        }
+
+        /* Left Side */
+        .contacts__info {
+            color: #FFFFFF;
+        }
+
+        .contacts__badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 13px;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            letter-spacing: 0.03em;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contacts__title {
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .contacts__subtitle {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #9CA3AF;
+            margin-bottom: 40px;
+            max-width: 480px;
+        }
+
+        /* Profile Card */
+        .contacts__profile {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .contacts__avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, #F97316, #22C55E) border-box;
+            padding: 2px;
+        }
+
+        .contacts__avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .contacts__profile-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contacts__profile-name {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .contacts__profile-role {
+            font-size: 14px;
+            color: #9CA3AF;
+        }
+
+        /* Nav Buttons */
+        .contacts__nav {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contacts__link {
+            display: inline-flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-xl);
+            padding: 12px 20px 12px 12px;
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all var(--duration-fast) var(--ease-out);
+            position: relative;
+            overflow: hidden;
+            max-width: 340px;
+        }
+
+        .contacts__link:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .contacts__link-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--duration-fast);
+        }
+
+        .contacts__link-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contacts__link--tg:hover .contacts__link-icon {
+            background: #0088cc;
+            border-color: #0088cc;
+        }
+
+        .contacts__link--ig:hover .contacts__link-icon {
+            background: #E1306C;
+            border-color: #E1306C;
+        }
+
+        .contacts__link--phone:hover .contacts__link-icon {
+            background: #22C55E;
+            border-color: #22C55E;
+        }
+
+        /* Right Side Form */
+        .contacts__form-wrap {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .contacts__form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contacts__field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contacts__label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #9CA3AF;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .contacts__label span {
+            color: var(--accent);
+        }
+
+        .contacts__input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            color: #FFFFFF;
+            font-family: inherit;
+            font-size: 15px;
+            transition: all var(--duration-fast);
+        }
+
+        .contacts__input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contacts__input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.2);
+        }
+
+        .contacts__footer {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            margin-top: 8px;
+        }
+
+        .contacts__checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 13px;
+            color: #9CA3AF;
+            line-height: 1.5;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .contacts__checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            flex-shrink: 0;
+            transition: all var(--duration-fast);
+            margin-top: 2px;
+        }
+
+        .contacts__checkbox:checked {
+            background: linear-gradient(135deg, #F97316, #22C55E);
+            border-color: transparent;
+        }
+
+        .contacts__checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .contacts__submit {
+            background: linear-gradient(135deg, #F97316, #22C55E);
+            color: #FFFFFF;
+            font-family: inherit;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 16px 32px;
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all var(--duration-fast);
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        .contacts__submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+        }
+
+        /* ============================================
        FADE-IN ANIMATIONS
        ============================================ */
         .fade-in {
@@ -1587,6 +1926,11 @@
                 grid-column: 1 / -1;
                 max-width: 50%;
                 margin: 0 auto;
+            }
+
+            .contacts__inner {
+                grid-template-columns: 1fr;
+                gap: 60px;
             }
         }
 
@@ -1805,8 +2149,44 @@
                 max-width: 100%;
             }
 
-            .ba-slider {
-                aspect-ratio: 4 / 5;
+            .contacts {
+                padding: 60px 16px;
+            }
+
+            .contacts__title {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .contacts__subtitle {
+                font-size: 16px;
+                margin-bottom: 32px;
+            }
+
+            .contacts__profile {
+                margin-bottom: 32px;
+            }
+
+            .contacts__form-wrap {
+                padding: 32px 24px;
+            }
+
+            .contacts__footer {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 20px;
+            }
+
+            .contacts__submit {
+                width: 100%;
+            }
+
+            .contacts__inner {
+                margin-bottom: 60px;
+            }
+
+            .contacts__bottom {
+                gap: 8px;
             }
         }
 
@@ -1833,6 +2213,14 @@
             .hero__stats {
                 flex-direction: column;
                 gap: 16px;
+            }
+
+            .contacts__title {
+                font-size: 28px;
+            }
+
+            .contacts__form-wrap {
+                padding: 24px 16px;
             }
         }
     </style>
@@ -2178,13 +2566,7 @@
                                 Корректировка раз в неделю
                             </li>
                         </ul>
-                        <a href="#contacts" class="services__card-btn services__card-btn--outline">
-                            Выбрать
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
+
                     </div>
 
                     <!-- Card 2: Онлайн сопровождение (Featured) -->
@@ -2229,13 +2611,7 @@
                                 Отчёты прогресса
                             </li>
                         </ul>
-                        <a href="#contacts" class="services__card-btn services__card-btn--primary">
-                            Выбрать
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
+
                     </div>
 
                     <!-- Card 3: Персональные тренировки -->
@@ -2272,13 +2648,7 @@
                                 Онлайн или в зале
                             </li>
                         </ul>
-                        <a href="#contacts" class="services__card-btn services__card-btn--outline">
-                            Выбрать
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
+
                     </div>
                 </div>
             </div>
@@ -2433,6 +2803,98 @@
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACTS SECTION ==================== -->
+        <section class="contacts" id="contacts">
+            <div class="contacts__inner fade-in">
+                <!-- Left: Info -->
+                <div class="contacts__info">
+                    <h2 class="contacts__title">Свяжитесь со&nbsp;мной</h2>
+                    <p class="contacts__subtitle">
+                        Давай обсудим твои цели и начнем работу. Заполни форму или напиши мне в любом удобном
+                        мессенджере.
+                    </p>
+
+                    <div class="contacts__profile">
+                        <div class="contacts__avatar">
+                            <img src="trainer_photo.png" alt="Artem Coach"
+                                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23333\'/><text x=\'50\' y=\'55\' font-size=\'40\' fill=\'%23fff\' text-anchor=\'middle\' dominant-baseline=\'middle\'>A</text></svg>'">
+                        </div>
+                        <div class="contacts__profile-info">
+                            <span class="contacts__profile-name">Артём</span>
+                            <span class="contacts__profile-role">Персональный фитнес-тренер</span>
+                        </div>
+                    </div>
+
+                    <div class="contacts__nav">
+                        <a href="https://t.me/telegram" target="_blank" class="contacts__link contacts__link--tg">
+                            <div class="contacts__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                                </svg>
+                            </div>
+                            Написать в Telegram
+                        </a>
+                        <a href="https://instagram.com/instagram" target="_blank"
+                            class="contacts__link contacts__link--ig">
+                            <div class="contacts__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="4" ry="4" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                            </div>
+                            Подписаться / Написать
+                        </a>
+                        <a href="tel:+1234567890" class="contacts__link contacts__link--phone">
+                            <div class="contacts__link-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            Позвонить
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Form -->
+                <div class="contacts__form-wrap">
+                    <form class="contacts__form" onsubmit="event.preventDefault(); alert('Сообщение отправлено!');">
+                        <div class="contacts__field">
+                            <label class="contacts__label">Имя <span>*</span></label>
+                            <input type="text" class="contacts__input" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="contacts__field">
+                            <label class="contacts__label">Email <span>*</span></label>
+                            <input type="email" class="contacts__input" placeholder="Ваш email" required>
+                        </div>
+                        <div class="contacts__field">
+                            <label class="contacts__label">Телефон <span>*</span></label>
+                            <input type="tel" class="contacts__input" placeholder="Ваш номер телефона" required>
+                        </div>
+
+                        <div class="contacts__footer">
+                            <label class="contacts__checkbox-label">
+                                <input type="checkbox" class="contacts__checkbox" required checked>
+                                Я согласен(на), что мои личные данные будут обрабатываться в соответствии с политикой
+                                конфиденциальности.
+                            </label>
+                            <button type="submit" class="contacts__submit">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Contacts Bottom (Acts as Footer) -->
+            <div class="contacts__bottom">
+                <span>&copy; 2026 Artem Fit Coach. Все права защищены.</span>
+                <a href="#" class="contacts__link-muted">Политика конфиденциальности</a>
             </div>
         </section>
     </main>
@@ -2695,40 +3157,40 @@
             });
         });
     </script>
-	<script>
-    let targetScroll = window.scrollY;
-    let currentScroll = window.scrollY;
-    const ease = 0.05; 
+    <script>
+        let targetScroll = window.scrollY;
+        let currentScroll = window.scrollY;
+        const ease = 0.05;
 
-    function smoothScroll() {
-        // Проверяем: если реальная позиция страницы сильно отличается от той, 
-        // что просчитал скрипт (больше чем на 1.5 пикселя), значит ты потянул ползунок.
-        // В этом случае просто синхронизируем переменные с новой позицией.
-        if (Math.abs(window.scrollY - currentScroll) > 1.5) {
-            targetScroll = window.scrollY;
-            currentScroll = window.scrollY;
+        function smoothScroll() {
+            // Проверяем: если реальная позиция страницы сильно отличается от той, 
+            // что просчитал скрипт (больше чем на 1.5 пикселя), значит ты потянул ползунок.
+            // В этом случае просто синхронизируем переменные с новой позицией.
+            if (Math.abs(window.scrollY - currentScroll) > 1.5) {
+                targetScroll = window.scrollY;
+                currentScroll = window.scrollY;
+            }
+
+            if (Math.abs(targetScroll - currentScroll) > 0.5) {
+                currentScroll += (targetScroll - currentScroll) * ease;
+                // Используем Math.round, чтобы избежать багов с дробными пикселями
+                window.scrollTo(0, Math.round(currentScroll));
+            }
+
+            requestAnimationFrame(smoothScroll);
         }
 
-        if (Math.abs(targetScroll - currentScroll) > 0.5) {
-            currentScroll += (targetScroll - currentScroll) * ease;
-            // Используем Math.round, чтобы избежать багов с дробными пикселями
-            window.scrollTo(0, Math.round(currentScroll)); 
-        }
-        
-        requestAnimationFrame(smoothScroll);
-    }
+        window.addEventListener("wheel", (e) => {
+            e.preventDefault();
 
-    window.addEventListener("wheel", (e) => {
-        e.preventDefault(); 
-        
-        targetScroll += e.deltaY;
+            targetScroll += e.deltaY;
 
-        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-        targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
-    }, { passive: false });
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+        }, { passive: false });
 
-    smoothScroll();
-</script>
+        smoothScroll();
+    </script>
 </body>
 
 </html>
