@@ -565,11 +565,11 @@
 
         /* Main Trainer Photo */
         .hero__photo-main {
-            width: 340px;
-            height: 440px;
+            width: 440px;
+            height: 580px;
             border-radius: var(--radius-xl);
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
+            box-shadow: var(--shadow-xl);
             position: relative;
             z-index: 2;
         }
@@ -585,37 +585,11 @@
             transform: scale(1.03);
         }
 
-        /* Secondary Photo */
-        .hero__photo-secondary {
-            position: absolute;
-            right: -10px;
-            bottom: 20px;
-            width: 220px;
-            height: 300px;
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            z-index: 3;
-            border: 4px solid var(--bg-primary);
-        }
-
-        .hero__photo-secondary img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s var(--ease-out);
-
-        }
-
-        .hero__photo-secondary:hover img {
-            transform: scale(1.03);
-        }
-
         /* Floating Stats Card */
         .hero__float-card {
             position: absolute;
-            top: 1px;
-            right: 1px;
+            top: 14px;
+            right: -42px;
             background: var(--bg-white);
             border-radius: var(--radius-md);
             padding: 16px 20px;
@@ -1878,13 +1852,8 @@
             }
 
             .hero__photo-main {
-                width: 280px;
-                height: 380px;
-            }
-
-            .hero__photo-secondary {
-                width: 180px;
-                height: 240px;
+                width: 360px;
+                height: 480px;
             }
 
             .hero__stats {
@@ -1991,14 +1960,15 @@
 
             .hero__actions {
                 flex-direction: column;
+                align-items: center;
                 gap: 16px;
-                width: 100%;
+                width: auto;
             }
 
             .hero__cta {
-                width: 100%;
+                width: auto;
                 justify-content: center;
-                padding: 16px 28px;
+                padding: 16px 36px;
             }
 
             .hero__stats {
@@ -2025,13 +1995,9 @@
             }
 
             .hero__photo-main {
-                width: 260px;
-                height: 340px;
+                width: 320px;
+                height: 440px;
                 margin: 0 auto;
-            }
-
-            .hero__photo-secondary {
-                display: none;
             }
 
             .hero__float-card {
@@ -2211,7 +2177,7 @@
             }
 
             .hero__stats {
-                flex-direction: column;
+
                 gap: 16px;
             }
 
@@ -2342,34 +2308,18 @@
                         <img src="trainer_photo.png" alt="Персональный фитнес-тренер Артём" loading="eager">
                     </div>
 
-                    <!-- Secondary photo -->
-                    <div class="hero__photo-secondary">
-                        <img src="trainer_action.png" alt="Тренировки с тренером Артёмом" loading="eager">
-                    </div>
-
                     <!-- Floating Stats Card -->
                     <div class="hero__float-card">
-                        <div class="hero__float-card-label">Результатов</div>
+
                         <div class="hero__float-card-value">
-                            3,580 <small>клиентов</small>
+                            3,580 <small>Отзывов</small>
                         </div>
                         <div class="hero__float-card-source">
                             Подтверждено <span>⭐ Reviews</span>
                         </div>
                     </div>
 
-                    <!-- Audio-like bar element -->
-                    <div class="hero__audio-bar">
-                        <div class="hero__audio-play">
-                            <svg viewBox="0 0 16 16">
-                                <polygon points="4,2 14,8 4,14" />
-                            </svg>
-                        </div>
-                        <div class="hero__audio-bars">
-                            <span></span><span></span><span></span><span></span><span></span>
-                            <span></span><span></span><span></span><span></span><span></span>
-                        </div>
-                    </div>
+
 
                     <!-- Floating badge circle -->
                     <div class="hero__float-badge">
@@ -2435,7 +2385,7 @@
             <div class="about__inner">
                 <!-- Header -->
                 <div class="about__header fade-in">
-                    <div class="about__badge">Обо мне</div>
+
                     <h2 class="about__title">Раскрой свой потенциал</h2>
                     <p class="about__subtitle">
                         Я помогаю людям трансформировать тело и&nbsp;образ жизни. Мой&nbsp;подход — это не&nbsp;просто
@@ -2524,7 +2474,7 @@
             <div class="services__inner">
                 <!-- Header -->
                 <div class="services__header fade-in">
-                    <div class="services__badge">💎 Услуги</div>
+
                     <h2 class="services__title">Выбери свой формат</h2>
                     <p class="services__subtitle">
                         Гибкие тарифы под&nbsp;любые цели. Начни трансформацию уже&nbsp;сегодня.
@@ -2659,7 +2609,7 @@
             <div class="results__inner">
                 <!-- Header -->
                 <div class="results__header fade-in">
-                    <div class="results__badge">Результаты</div>
+
                     <h2 class="results__title">Трансформации клиентов</h2>
                     <p class="results__subtitle">
                         Реальные результаты моих&nbsp;клиентов. Перетяни слайдер, чтобы увидеть разницу.
@@ -3089,7 +3039,7 @@
                     if (entry.isIntersecting) {
                         const el = entry.target;
                         const duration = 2500;
-                        const target = 25;
+                        const target = 143;
                         const startTime = performance.now();
 
                         const update = (currentTime) => {
@@ -3097,7 +3047,7 @@
                             const progress = Math.min(elapsed / duration, 1);
                             const easeProgress = 1 - Math.pow(1 - progress, 3);
                             const currentValue = Math.round(target * easeProgress);
-                            el.innerHTML = currentValue.toLocaleString() + ' <small>клиентов</small>';
+                            el.innerHTML = currentValue.toLocaleString() + ' <small>Отзывов</small>';
 
                             if (progress < 1) {
                                 requestAnimationFrame(update);
